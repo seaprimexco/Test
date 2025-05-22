@@ -10,17 +10,34 @@
 <body class="p-4">
   <div class="container">
     <h2 class="mb-3">Form khảo sát chi phí sống</h2>
-    <form name="survey" method="POST" netlify>
-      <div class="mb-3">
-        <label for="hoten" class="form-label">Họ và tên</label>
-        <input type="text" class="form-control" id="hoten" name="hoten" required>
-      </div>
-      <div class="mb-3">
-        <label for="chi_phi" class="form-label">Chi phí sinh hoạt hàng tháng (VND)</label>
-        <input type="number" class="form-control" id="chi_phi" name="chi_phi" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Gửi khảo sát</button>
-    </form>
+<form id="survey-form">
+  <div class="mb-3">
+    <label for="hoten" class="form-label">Họ và tên</label>
+    <input type="text" class="form-control" id="hoten" name="hoten" required>
+  </div>
+  <div class="mb-3">
+    <label for="chi_phi" class="form-label">Chi phí sinh hoạt</label>
+    <input type="number" class="form-control" id="chi_phi" name="chi_phi" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Gửi khảo sát</button>
+</form>
+
+<script>
+document.getElementById("survey-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const hoten = document.getElementById("hoten").value;
+  const chi_phi = document.getElementById("chi_phi").value;
+  fetch("https://script.google.com/macros/s/AKfycbypwCLP0kSqduiTLSRvQCCJO_GqPMn70GpHtWxZrDFxbP96mi2qHCi057-UKZpEDv8nWA/exec", {
+    method: "POST",
+    body: JSON.stringify({ hoten, chi_phi }),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(res => res.text())
+  .then(data => alert("Đã gửi khảo sát!"))
+  .catch(err => alert("Lỗi gửi dữ liệu"));
+});
+</script>
+
   </div>
 </body>
 </html>
