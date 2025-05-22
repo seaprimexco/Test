@@ -1,5 +1,5 @@
 // Thay URL này bằng Google Apps Script Web App URL của Đại ca
-const scriptURL = 'https://script.google.com/macros/s/AKfycbysOvcDSUBDu7Mtp1NTyKxaWuIPuKd9HwHO-TCycq_hmDwpt0YtEKD1GX7lt2pETbtNiQ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycby8AWt_z-FT3aeY_ps70fJuWpsRF73DX_uGgYCMigvPGmvvNVTpEqvOUUqxyrsGWjKG_A/exec';
 
 const form = document.getElementById('surveyForm');
 const status = document.getElementById('status');
