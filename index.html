@@ -27,7 +27,7 @@ document.getElementById("survey-form").addEventListener("submit", function(e) {
   e.preventDefault();
   const hoten = document.getElementById("hoten").value;
   const chi_phi = document.getElementById("chi_phi").value;
-  fetch("https://script.google.com/macros/s/AKfycbypwCLP0kSqduiTLSRvQCCJO_GqPMn70GpHtWxZrDFxbP96mi2qHCi057-UKZpEDv8nWA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxsvaR1Gi8EubC9s4kq4iOX75yJwGVkivZnCjgX0ibhNpgUcoXiphhh9hfIDr8X20B97g/exec", {
     method: "POST",
     body: JSON.stringify({ hoten, chi_phi }),
     headers: { "Content-Type": "application/json" }
